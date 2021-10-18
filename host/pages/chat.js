@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { HostMicroFrontend } from "../components/HostMicroFrontend";
+import { MountMicroFrontend } from "../components/MountMicroFrontend";
 import Link from "next/link";
 
 const Reception = () => {
@@ -13,16 +13,12 @@ const Reception = () => {
       <Link shallow href="/">
         home
       </Link>
-      <HostMicroFrontend
+      <MountMicroFrontend
         url="http://localhost:8888/remoteEntry.js"
         name="chat"
       />
     </>
   );
-};
-
-export const getInitialProps = async (ctx) => {
-  return {};
 };
 
 export default Reception;

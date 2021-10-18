@@ -16,8 +16,4 @@ const Home = () => {
   );
 };
 
-export const getInitialProps = async (ctx) => {
-  return {};
-};
-
 export default Home;
