@@ -5,6 +5,10 @@
     "start": "lerna run start --parallel",
     "postinstall": "lerna bootstrap"
   },
+  "workspaces": [
+    "packages/*",
+    "microfrontends/*"
+  ],
   "devDependencies": {
     "lerna": "^4.0.0"
   }

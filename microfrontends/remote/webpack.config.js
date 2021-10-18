@@ -27,7 +27,7 @@ module.exports = {
       name: "chat",
       filename: "remoteEntry.js",
       exposes: {
-        "./Index": "./src/bootstrap.js",
+        "./Index": "./src/bootstrap",
       },
       shared: packageJson.dependencies,
     }),
@@ -61,6 +61,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
 };

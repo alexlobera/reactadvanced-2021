@@ -1,6 +1,7 @@
 const packageJsonDeps = require("./package.json").dependencies;
+const withTM = require("next-transpile-modules")(["user-provider"]);
 
-module.exports = {
+module.exports = withTM({
   webpack: (config, options) => {
     const federationConfig = {
       shared: {
@@ -13,6 +14,9 @@ module.exports = {
           eager: true,
           requiredVersion: packageJsonDeps["react-dom"],
         },
+        "user-provider": {
+          eager: true,
+        },
       },
     };
 
@@ -22,10 +26,9 @@ module.exports = {
 
     return config;
   },
-
   webpackDevMiddleware: (config) => {
     // Perform customizations to webpack dev middleware config
     // Important: return the modified config
     return config;
   },
-};
+});

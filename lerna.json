@@ -1,5 +1,5 @@
 {
-  "packages": ["remote", "host"],
-  "version": "0.0.0",
-  "npmClient": "yarn"
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true
 }
