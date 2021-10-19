@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useUsername } from "user-provider";
 
-export function MicroFrontend() {
+export function MicroFrontendRoot({ username }) {
   const [messages, setMessages] = useState([
     { text: "Hello 👋", sentAt: new Date() },
   ]);
@@ -10,7 +10,7 @@ export function MicroFrontend() {
 
   return (
     <>
-      <h1>{currentUsername}'s chat</h1>
+      <h1>{username}'s chat</h1>
       {messages.map((message) => (
         <p key={message.sentAt.getTime()}>{message.text}</p>
       ))}

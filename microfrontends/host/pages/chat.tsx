@@ -2,8 +2,10 @@ import React from "react";
 import Head from "next/head";
 import { MountMicroFrontend } from "../components/MountMicroFrontend";
 import Link from "next/link";
+import { useUsername } from "user-provider";
 
 const Reception = () => {
+  const currentUsername = useUsername();
   return (
     <>
       <Head>
@@ -16,6 +18,7 @@ const Reception = () => {
       <MountMicroFrontend
         url="http://localhost:8888/remoteEntry.js"
         name="chat"
+        username={currentUsername}
       />
     </>
   );

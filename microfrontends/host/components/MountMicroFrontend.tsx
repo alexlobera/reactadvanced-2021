@@ -1,20 +1,33 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useDynamicScript } from "./useDynamicScript";
 
 const Loader = () => <>...</>;
 
-export function MountMicroFrontend({ url, name }) {
+function CreateRoot({ mount, username }) {
+  const ref = useRef();
+
+  useEffect(() => {
+    const { unmount } = mount(ref.current, { username });
+
+    return unmount;
+  }, [ref.current]);
+
+  return <div ref={ref} />;
+}
+
+export function MountMicroFrontend({ url, name, username }) {
+  const [mount, setMount] = useState();
   const { ready } = useDynamicScript({ url });
 
-  if (!ready) return <Loader />;
+  useEffect(() => {
+    if (ready) {
+      loadModule(name).then(({ mount: mountFunction }) => {
+        setMount(() => mountFunction);
+      });
+    }
+  }, [url, ready]);
 
-  const Component = React.lazy(() => loadModule(name));
-
-  return (
-    <React.Suspense fallback={<Loader />}>
-      <Component />
-    </React.Suspense>
-  );
+  return mount ? <CreateRoot mount={mount} username={username} /> : <Loader />;
 }
 
 async function loadModule(scope, module = "./Index") {

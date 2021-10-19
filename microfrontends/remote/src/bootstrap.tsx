@@ -1,19 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { MicroFrontend } from "./components/MicroFrontend";
+import { MicroFrontendRoot } from "./components/MicroFrontendRoot";
+// import { UserProvider } from "user-provider";
 
-import { UserProvider } from "user-provider";
+interface MountOptions {
+  username?: string;
+}
+export function mount(el, { username }: MountOptions = {}) {
+  if (el) ReactDOM.render(<MicroFrontendRoot username={username} />, el);
 
-export default MicroFrontend;
+  return {
+    unmount: () => {
+      ReactDOM.unmountComponentAtNode(el);
+    },
+  };
+}
 
 if (process.env.NODE_ENV === "development") {
   const el = document.getElementById("root-chat-dev");
-
-  if (el)
-    ReactDOM.render(
-      <UserProvider username="Alex">
-        <MicroFrontend />
-      </UserProvider>,
-      el
-    );
+  if (el) {
+    mount(el, { username: "alexdev" });
+  }
 }
