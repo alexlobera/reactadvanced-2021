@@ -1,5 +1,8 @@
 const packageJsonDeps = require("./package.json").dependencies;
-const withTM = require("next-transpile-modules")(["user-provider"]);
+const withTM = require("next-transpile-modules")([
+  "user-provider",
+  "reactive-map",
+]);
 
 module.exports = withTM({
   webpack: (config, options) => {

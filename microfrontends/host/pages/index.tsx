@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 
 const Home = () => {
   return (
@@ -9,9 +8,6 @@ const Home = () => {
         <title>Home</title>
       </Head>
       <h1>Home page</h1>
-      <Link shallow href="/chat">
-        chat
-      </Link>
     </>
   );
 };

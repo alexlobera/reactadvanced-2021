@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useUsername } from "user-provider";
+import { useSharedValue } from "reactive-map";
 
 export function MicroFrontendRoot() {
   const [messages, setMessages] = useState([
     { text: "Hello 👋", sentAt: new Date() },
   ]);
   const [newMessage, setNewMessage] = useState("");
-  const currentUsername = useUsername();
+  const currentUsername = useSharedValue("username");
 
   return (
     <>

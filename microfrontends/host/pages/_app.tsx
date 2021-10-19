@@ -1,9 +1,13 @@
-import { UserProvider } from "user-provider";
+import { ReactiveMapProvider, ReactiveMap } from "reactive-map";
+import { Nav } from "../components/Nav";
+
+const reactiveMap = new ReactiveMap();
 
 export default function MyApp({ Component, pageProps }) {
   return (
-    <UserProvider username="alexlbr">
+    <ReactiveMapProvider reactiveMap={reactiveMap}>
+      <Nav />
       <Component {...pageProps} />
-    </UserProvider>
+    </ReactiveMapProvider>
   );
 }

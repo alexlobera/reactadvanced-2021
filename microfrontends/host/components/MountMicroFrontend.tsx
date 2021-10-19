@@ -1,20 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDynamicScript } from "./useDynamicScript";
-
+import { useReactiveMap } from "reactive-map";
 // 🔥 this code is is not production ready, no error handling, no perf optimizations, etc
 
 const Loader = () => <>...</>;
 
 function CreateRoot({ mount }) {
   const ref = useRef();
+  const reactiveMap = useReactiveMap();
 
   useEffect(() => {
-    const { unmount } = mount(ref.current);
+    const { unmount } = mount(ref.current, { reactiveMap });
 
     return unmount;
   }, [ref.current]);
 
-  return <div ref={ref} />;
+  return <div ref={ref} style={{ display: "inline" }} />;
 }
 
 export function MountMicroFrontend({ url, name }) {

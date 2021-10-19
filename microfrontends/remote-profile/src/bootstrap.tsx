@@ -27,7 +27,7 @@ export function mount(el: HTMLElement, { reactiveMap }: MountOptions) {
 }
 
 if (process.env.NODE_ENV === "development") {
-  const el = document.getElementById("root-chat-dev");
+  const el = document.getElementById("root-profile-dev");
   if (el) {
     mount(el, { reactiveMap: new ReactiveMap() });
   }
