@@ -109,8 +109,8 @@ export default function App() {
                   <option value="10">10</option>
                   <option value="100">100</option>
                   <option value="1000">1000</option>
+                  <option value="3000">3000</option>
                   <option value="10000">10000</option>
-                  <option value="100000">100000</option>
                 </select>
               </span>
               <span style={styles.header.column}>
@@ -126,6 +126,7 @@ export default function App() {
                   <option value="100">100</option>
                   <option value="1000">1000</option>
                   <option value="10000">10000</option>
+                  <option value="30000">30000</option>
                   <option value="100000">100000</option>
                 </select>
               </span>
