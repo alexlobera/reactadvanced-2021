@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { MicroFrontendRoot } from "./components/MicroFrontendRoot";
 // import { UserProvider } from "user-provider";
 
+// 🔥 this code is is not production ready
+
 // 👉 We don't `export { MicroFrontendRoot }` anymore
 interface MountOptions {}
 

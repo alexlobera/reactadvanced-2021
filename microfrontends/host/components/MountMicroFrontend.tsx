@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDynamicScript } from "./useDynamicScript";
 
+// 🔥 this code is is not production ready, no error handling, no perf optimizations, etc
+
 const Loader = () => <>...</>;
 
 function CreateRoot({ mount }) {
