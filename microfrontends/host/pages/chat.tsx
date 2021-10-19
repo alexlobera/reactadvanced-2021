@@ -18,7 +18,6 @@ const Reception = () => {
       <MountMicroFrontend
         url="http://localhost:8888/remoteEntry.js"
         name="chat"
-        username={currentUsername}
       />
     </>
   );

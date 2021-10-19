@@ -3,11 +3,11 @@ import { useDynamicScript } from "./useDynamicScript";
 
 const Loader = () => <>...</>;
 
-function CreateRoot({ mount, username }) {
+function CreateRoot({ mount }) {
   const ref = useRef();
 
   useEffect(() => {
-    const { unmount } = mount(ref.current, { username });
+    const { unmount } = mount(ref.current);
 
     return unmount;
   }, [ref.current]);
@@ -15,7 +15,7 @@ function CreateRoot({ mount, username }) {
   return <div ref={ref} />;
 }
 
-export function MountMicroFrontend({ url, name, username }) {
+export function MountMicroFrontend({ url, name }) {
   const [mount, setMount] = useState();
   const { ready } = useDynamicScript({ url });
 
@@ -27,7 +27,7 @@ export function MountMicroFrontend({ url, name, username }) {
     }
   }, [url, ready]);
 
-  return mount ? <CreateRoot mount={mount} username={username} /> : <Loader />;
+  return mount ? <CreateRoot mount={mount} /> : <Loader />;
 }
 
 async function loadModule(scope, module = "./Index") {
