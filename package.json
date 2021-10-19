@@ -6,8 +6,8 @@
     "postinstall": "lerna bootstrap"
   },
   "workspaces": [
-    "packages/*",
-    "microfrontends/*"
+    "host",
+    "remote"
   ],
   "devDependencies": {
     "lerna": "^4.0.0"
