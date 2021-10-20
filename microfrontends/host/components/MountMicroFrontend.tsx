@@ -13,7 +13,7 @@ function CreateRoot({ mount }) {
     const { unmount } = mount(ref.current, { reactiveMap });
 
     return unmount;
-  }, [ref.current]);
+  }, [ref.current, reactiveMap]);
 
   return <div ref={ref} />;
 }
