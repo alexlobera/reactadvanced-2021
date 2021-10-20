@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
-const port = 8887;
+const port = 8880;
 
 module.exports = {
   mode: "development",
@@ -21,7 +21,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "host",
       remotes: {
-        remote: "remote@http://localhost:8888/remoteEntry.js",
+        remote: "remote@http://localhost:8881/remoteEntry.js",
       },
       shared: { react: "^17.0.2" },
     }),
