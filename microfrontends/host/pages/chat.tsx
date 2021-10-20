@@ -10,7 +10,6 @@ const Reception = () => {
       <Head>
         <title>Chat</title>
       </Head>
-      <h1>Host page</h1>
       <MountMicroFrontend
         url="http://localhost:8888/remoteEntry.js"
         name="chat"

@@ -8,15 +8,18 @@ export function App() {
   const [username, setUsername] = useState("");
 
   return (
-    <form
-      style={{ display: "inline" }}
-      onSubmit={(e) => {
-        e.preventDefault();
-        shareUsername(username);
-      }}
-    >
-      <Input value={username} onChange={(e) => setUsername(e.target.value)} />
-      <Button />
-    </form>
+    <>
+      <h2>User profile</h2>
+      <form
+        style={{ display: "inline" }}
+        onSubmit={(e) => {
+          e.preventDefault();
+          shareUsername(username);
+        }}
+      >
+        <Input value={username} onChange={(e) => setUsername(e.target.value)} />
+        <Button />
+      </form>
+    </>
   );
 }
