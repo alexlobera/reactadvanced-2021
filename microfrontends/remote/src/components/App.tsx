@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { useSharedValue } from "reactive-map";
 
-export function MicroFrontendRoot() {
-  const [messages, setMessages] = useState([
-    { text: "Hello 👋", sentAt: new Date() },
-  ]);
+export function App() {
+  const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
   const currentUsername = useSharedValue("username");
 
   return (
     <>
-      <h1>{currentUsername}'s chat</h1>
+      <h2>{currentUsername}'s React chat</h2>
       {messages.map((message) => (
         <p key={message.sentAt.getTime()}>{message.text}</p>
       ))}

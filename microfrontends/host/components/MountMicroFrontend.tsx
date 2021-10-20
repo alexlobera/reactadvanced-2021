@@ -15,7 +15,7 @@ function CreateRoot({ mount }) {
     return unmount;
   }, [ref.current]);
 
-  return <div ref={ref} style={{ display: "inline" }} />;
+  return <div ref={ref} />;
 }
 
 export function MountMicroFrontend({ url, name }) {
@@ -24,8 +24,8 @@ export function MountMicroFrontend({ url, name }) {
 
   useEffect(() => {
     if (ready) {
-      loadModule(name).then(({ mount: mountFunction }) => {
-        setMount(() => mountFunction);
+      loadModule(name).then(({ mount: remoteMount }) => {
+        setMount(() => remoteMount);
       });
     }
   }, [url, ready]);

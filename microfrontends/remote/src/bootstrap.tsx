@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { MicroFrontendRoot } from "./components/MicroFrontendRoot";
+import { App } from "./components/App";
 import { ReactiveMap, ReactiveMapProvider } from "reactive-map";
+
+const RootMicroFrontend = ({ children }) => children;
 
 // 🔥 this code is is not production ready
 
@@ -13,9 +15,11 @@ interface MountOptions {
 export function mount(el: HTMLElement, { reactiveMap }: MountOptions) {
   if (el)
     ReactDOM.render(
-      <ReactiveMapProvider reactiveMap={reactiveMap}>
-        <MicroFrontendRoot />
-      </ReactiveMapProvider>,
+      <RootMicroFrontend>
+        <ReactiveMapProvider reactiveMap={reactiveMap}>
+          <App />
+        </ReactiveMapProvider>
+      </RootMicroFrontend>,
       el
     );
 

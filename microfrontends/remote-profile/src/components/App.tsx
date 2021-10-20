@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useShareValue, useSharedValue } from "reactive-map";
+import { Input } from "./Input";
+import { Button } from "./Button";
 
-export function MicroFrontendRoot() {
+export function App() {
   const shareUsername = useShareValue("username");
-  const [username, setUsername] = useState(useSharedValue("username"));
+  const [username, setUsername] = useState("");
 
   return (
     <form
@@ -13,13 +15,8 @@ export function MicroFrontendRoot() {
         shareUsername(username);
       }}
     >
-      <input
-        type="text"
-        name="username"
-        value={username || ""}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <button type="submit">Save</button>
+      <Input value={username} onChange={(e) => setUsername(e.target.value)} />
+      <Button />
     </form>
   );
 }
