@@ -1,7 +1,7 @@
 import "regenerator-runtime";
 import { useState, useEffect } from "react";
 import { ReactiveMap } from "./ReactiveMap";
-import RemoteApp from "./RemoteApp";
+import CreateRoot from "./CreateRoot";
 import { useReactiveValue } from "./ReactReactiveMap";
 
 const reactiveMap = new ReactiveMap();
@@ -82,7 +82,7 @@ export default function App() {
   const children = [];
   for (let i = 0; i < appCount; i++) {
     children.push(
-      <RemoteApp key={i} reactiveMapGet={reactiveMap.get} appIndex={i} />
+      <CreateRoot key={i} reactiveMapGet={reactiveMap.get} appIndex={i} />
     );
   }
 
