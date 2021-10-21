@@ -8,7 +8,7 @@ const Reception = () => {
   return (
     <>
       <Head>
-        <title>Chat</title>
+        <title>Host & Chat</title>
       </Head>
       <MountMicroFrontend
         url="http://localhost:8888/remoteEntry.js"
