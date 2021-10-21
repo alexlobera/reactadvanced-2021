@@ -1,7 +1,7 @@
 import { useRef, useEffect, memo } from "react";
 import mount from "remote/App";
 
-export default memo(function RemoteApp({ reactiveMapGet, appIndex }) {
+export default memo(function CreateRoot({ reactiveMapGet, appIndex }) {
   const ref = useRef();
 
   useEffect(() => {
