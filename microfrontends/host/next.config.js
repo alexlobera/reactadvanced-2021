@@ -20,6 +20,9 @@ module.exports = withTM({
         "user-provider": {
           eager: true,
         },
+        "reactive-map": {
+          eager: true,
+        },
       },
     };
 
