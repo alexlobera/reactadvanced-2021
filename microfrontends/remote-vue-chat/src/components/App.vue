@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>VUE chat</h2>
+    <h2>{{ username }}'s VUE chat</h2>
     <form v-on:submit.prevent="onSubmit">
       <input type="text" v-model="text" placeholder="Type a message..." />
       <button>Send</button>
@@ -17,12 +17,19 @@
 <script>
 export default {
   name: "App",
+  props: ["reactiveMap"],
   data() {
     return {
+      username: null,
       messages: [],
       text: "",
       id: 1,
     };
+  },
+  mounted() {
+    this.reactiveMap.get("username").listen((username) => {
+      this.username = username;
+    });
   },
   methods: {
     onSubmit() {
