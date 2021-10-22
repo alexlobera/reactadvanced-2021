@@ -27,7 +27,7 @@ export default {
     };
   },
   mounted() {
-    this.reactiveMap.get("username").listen((username) => {
+    this.reactiveMap?.get("username").listen((username) => {
       this.username = username;
     });
   },
