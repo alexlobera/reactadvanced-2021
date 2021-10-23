@@ -1,8 +1,5 @@
 const packageJsonDeps = require("./package.json").dependencies;
-const withTM = require("next-transpile-modules")([
-  "user-provider",
-  "reactive-map",
-]);
+const withTM = require("next-transpile-modules")(["reactive-map"]);
 
 module.exports = withTM({
   webpack: (config, options) => {
@@ -16,9 +13,6 @@ module.exports = withTM({
         "react-dom": {
           eager: true,
           requiredVersion: packageJsonDeps["react-dom"],
-        },
-        "user-provider": {
-          eager: true,
         },
         "reactive-map": {
           eager: true,
