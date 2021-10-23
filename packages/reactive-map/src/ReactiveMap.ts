@@ -1,5 +1,5 @@
 // 🔥 this code is not production ready
-// 🔥 the APIs are a simplification of our production APIs
+// 🔥 these APIs are a simplification of our production APIs
 
 export class ReactiveMap {
   values = new Map();

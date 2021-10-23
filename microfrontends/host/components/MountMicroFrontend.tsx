@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useDynamicScript } from "./useDynamicScript";
 import { useReactiveMap } from "reactive-map";
-// 🔥 this code is is not production ready, no error handling, no perf optimizations, etc
+import { Loader } from "./Loader";
 
-const Loader = () => <>...</>;
+// 🔥 this code is is not production ready, no error handling, no perf optimizations, etc
 
 function CreateRoot({ mount }) {
   const ref = useRef();

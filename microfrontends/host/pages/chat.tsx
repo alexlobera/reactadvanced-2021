@@ -1,10 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import { MountMicroFrontend } from "../components/MountMicroFrontend";
-import { useUsername } from "user-provider";
 
 const Reception = () => {
-  const currentUsername = useUsername();
   return (
     <>
       <Head>
